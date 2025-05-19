@@ -6,7 +6,7 @@ options:
     cmake_opt: ''
     comment: ''
     copyright: ''
-    description: ''
+    description: Jammer
     gen_cmake: 'On'
     gen_linking: dynamic
     generate_options: qt_gui
@@ -22,7 +22,7 @@ options:
     run_options: prompt
     sizing_mode: fixed
     thread_safe_setters: ''
-    title: Not titled yet
+    title: Radio3
     window_size: (1000,1000)
   states:
     bus_sink: false
@@ -61,7 +61,7 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: 20*1000000
+    value: '5000000'
   states:
     bus_sink: false
     bus_source: false
@@ -137,7 +137,7 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: '32000'
+    value: '20000000'
   states:
     bus_sink: false
     bus_source: false
@@ -149,12 +149,42 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: '1000'
+    value: time_chooser * 1000
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
     coordinate: [576, 12.0]
+    rotation: 0
+    state: enabled
+- name: time_chooser
+  id: variable_qtgui_chooser
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: 'Seconds:'
+    label0: ''
+    label1: ''
+    label2: ''
+    label3: ''
+    label4: ''
+    labels: '[]'
+    num_opts: '5'
+    option0: '1'
+    option1: '2'
+    option2: '3'
+    option3: '4'
+    option4: '5'
+    options: '[0, 1, 2]'
+    orient: Qt.QVBoxLayout
+    type: int
+    value: '3'
+    widget: combo_box
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [968, 128.0]
     rotation: 0
     state: enabled
 - name: analog_random_source_x_0
@@ -163,7 +193,7 @@ blocks:
     affinity: ''
     alias: ''
     comment: ''
-    max: '4'
+    max: '8'
     maxoutbuf: '0'
     min: '0'
     minoutbuf: '0'
@@ -183,7 +213,7 @@ blocks:
     affinity: ''
     alias: ''
     comment: ''
-    max: '4'
+    max: '8'
     maxoutbuf: '0'
     min: '0'
     minoutbuf: '0'
@@ -203,7 +233,7 @@ blocks:
     affinity: ''
     alias: ''
     comment: ''
-    max: '4'
+    max: '8'
     maxoutbuf: '0'
     min: '0'
     minoutbuf: '0'
@@ -223,7 +253,7 @@ blocks:
     affinity: ''
     alias: ''
     comment: ''
-    max: '4'
+    max: '8'
     maxoutbuf: '0'
     min: '0'
     minoutbuf: '0'
@@ -492,7 +522,7 @@ blocks:
     alias: ''
     comment: ''
     enabled: 'True'
-    input_index: rand_signal_selector_2
+    input_index: rand_signal_selector_3
     maxoutbuf: '0'
     minoutbuf: '0'
     num_inputs: '8'
@@ -515,7 +545,7 @@ blocks:
     alias: ''
     comment: ''
     enabled: 'True'
-    input_index: rand_signal_selector_2
+    input_index: rand_signal_selector_4
     maxoutbuf: '0'
     minoutbuf: '0'
     num_inputs: '8'
@@ -551,7 +581,7 @@ blocks:
     bus_structure: null
     coordinate: [1496, 572.0]
     rotation: 0
-    state: bypassed
+    state: enabled
 - name: qtgui_freq_sink_x_0
   id: qtgui_freq_sink_x
   parameters:
@@ -570,7 +600,7 @@ blocks:
     autoscale: 'False'
     average: '1.0'
     axislabels: 'True'
-    bw: samp_rate
+    bw: '50000000'
     color1: '"blue"'
     color10: '"dark blue"'
     color2: '"red"'
@@ -583,7 +613,7 @@ blocks:
     color9: '"dark green"'
     comment: ''
     ctrlpanel: 'True'
-    fc: frequency+(offset*2)
+    fc: frequency+(offset*4)
     fftsize: '1024'
     freqhalf: 'True'
     grid: 'False'
@@ -604,7 +634,7 @@ blocks:
     minoutbuf: '0'
     name: '""'
     nconnections: '1'
-    norm_window: 'False'
+    norm_window: 'True'
     showports: 'False'
     tr_chan: '0'
     tr_level: '0.0'
@@ -630,7 +660,104 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1688, 564.0]
+    coordinate: [1688, 556.0]
+    rotation: 0
+    state: enabled
+- name: qtgui_time_sink_x_0
+  id: qtgui_time_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'True'
+    axislabels: 'True'
+    color1: blue
+    color10: dark blue
+    color2: red
+    color3: green
+    color4: black
+    color5: cyan
+    color6: magenta
+    color7: yellow
+    color8: dark red
+    color9: dark green
+    comment: ''
+    ctrlpanel: 'False'
+    entags: 'True'
+    grid: 'False'
+    gui_hint: ''
+    label1: Signal 1
+    label10: Signal 10
+    label2: Signal 2
+    label3: Signal 3
+    label4: Signal 4
+    label5: Signal 5
+    label6: Signal 6
+    label7: Signal 7
+    label8: Signal 8
+    label9: Signal 9
+    legend: 'True'
+    marker1: '-1'
+    marker10: '-1'
+    marker2: '-1'
+    marker3: '-1'
+    marker4: '-1'
+    marker5: '-1'
+    marker6: '-1'
+    marker7: '-1'
+    marker8: '-1'
+    marker9: '-1'
+    name: '""'
+    nconnections: '4'
+    size: '1024'
+    srate: samp_rate
+    stemplot: 'False'
+    style1: '1'
+    style10: '1'
+    style2: '1'
+    style3: '1'
+    style4: '1'
+    style5: '1'
+    style6: '1'
+    style7: '1'
+    style8: '1'
+    style9: '1'
+    tr_chan: '0'
+    tr_delay: '0'
+    tr_level: '0.0'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_slope: qtgui.TRIG_SLOPE_POS
+    tr_tag: '""'
+    type: complex
+    update_time: '0.10'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    ylabel: Amplitude
+    ymax: '1'
+    ymin: '-1'
+    yunit: '""'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1680, 760.0]
     rotation: 0
     state: enabled
 - name: rand_value_0
@@ -758,7 +885,7 @@ blocks:
     bw7: '0'
     bw8: '0'
     bw9: '0'
-    center_freq0: frequency+(offset*2)
+    center_freq0: frequency+(offset*5)
     center_freq1: '0'
     center_freq10: '0'
     center_freq11: '0'
@@ -965,7 +1092,7 @@ blocks:
     bus_structure: null
     coordinate: [1688, 424.0]
     rotation: 0
-    state: enabled
+    state: disabled
 
 connections:
 - [analog_random_source_x_0, '0', rand_value_0, '0']
@@ -1007,9 +1134,13 @@ connections:
 - [blocks_add_xx_0, '0', blocks_throttle2_0, '0']
 - [blocks_add_xx_0, '0', uhd_usrp_sink_0, '0']
 - [blocks_selector_0, '0', blocks_add_xx_0, '0']
+- [blocks_selector_0, '0', qtgui_time_sink_x_0, '0']
 - [blocks_selector_0_0, '0', blocks_add_xx_0, '1']
+- [blocks_selector_0_0, '0', qtgui_time_sink_x_0, '1']
 - [blocks_selector_0_0_0, '0', blocks_add_xx_0, '2']
+- [blocks_selector_0_0_0, '0', qtgui_time_sink_x_0, '2']
 - [blocks_selector_0_0_1, '0', blocks_add_xx_0, '3']
+- [blocks_selector_0_0_1, '0', qtgui_time_sink_x_0, '3']
 - [blocks_throttle2_0, '0', qtgui_freq_sink_x_0, '0']
 
 metadata:
