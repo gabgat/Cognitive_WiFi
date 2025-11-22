@@ -137,7 +137,7 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: '20000000'
+    value: '35000000'
   states:
     bus_sink: false
     bus_source: false
@@ -274,7 +274,7 @@ blocks:
     alias: ''
     amp: '1'
     comment: ''
-    freq: frequency + (0 * offset)
+    freq: frequency + (0 * offset/2)
     maxoutbuf: '0'
     minoutbuf: '0'
     offset: '0'
@@ -600,7 +600,7 @@ blocks:
     autoscale: 'False'
     average: '1.0'
     axislabels: 'True'
-    bw: '50000000'
+    bw: '45000000'
     color1: '"blue"'
     color10: '"dark blue"'
     color2: '"red"'
@@ -613,7 +613,7 @@ blocks:
     color9: '"dark green"'
     comment: ''
     ctrlpanel: 'True'
-    fc: frequency+(offset*4)
+    fc: '2429500000'
     fftsize: '1024'
     freqhalf: 'True'
     grid: 'False'
@@ -853,7 +853,7 @@ blocks:
     ant7: '"TX/RX"'
     ant8: '"TX/RX"'
     ant9: '"TX/RX"'
-    bw0: '0'
+    bw0: '45000000'
     bw1: '0'
     bw10: '0'
     bw11: '0'
@@ -885,7 +885,7 @@ blocks:
     bw7: '0'
     bw8: '0'
     bw9: '0'
-    center_freq0: frequency+(offset*5)
+    center_freq0: '2429500000'
     center_freq1: '0'
     center_freq10: '0'
     center_freq11: '0'
@@ -1090,7 +1090,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1688, 424.0]
+    coordinate: [1688, 392.0]
     rotation: 0
     state: disabled
 

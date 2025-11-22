@@ -68,7 +68,7 @@ class test2e(gr.top_block, Qt.QWidget):
         ##################################################
         self.time_chooser = time_chooser = 3
         self.time_ = time_ = time_chooser * 1000
-        self.samp_rate = samp_rate = 20000000
+        self.samp_rate = samp_rate = 35000000
         self.rand_signal_selector_4 = rand_signal_selector_4 = 0
         self.rand_signal_selector_3 = rand_signal_selector_3 = 0
         self.rand_signal_selector_2 = rand_signal_selector_2 = 0
@@ -215,8 +215,8 @@ class test2e(gr.top_block, Qt.QWidget):
         self.qtgui_freq_sink_x_0 = qtgui.freq_sink_c(
             1024, #size
             window.WIN_BLACKMAN_hARRIS, #wintype
-            (frequency+(offset*4)), #fc
-            50000000, #bw
+            2429500000, #fc
+            45000000, #bw
             "", #name
             1,
             None # parent
@@ -271,7 +271,7 @@ class test2e(gr.top_block, Qt.QWidget):
         self.analog_sig_source_x_0_2 = analog.sig_source_c(samp_rate, analog.GR_COS_WAVE, (frequency + (3 * offset)), 1, 0, 0)
         self.analog_sig_source_x_0_1 = analog.sig_source_c(samp_rate, analog.GR_COS_WAVE, (frequency + (2 * offset)), 1, 0, 0)
         self.analog_sig_source_x_0_0 = analog.sig_source_c(samp_rate, analog.GR_COS_WAVE, (frequency + (1 * offset)), 1, 0, 0)
-        self.analog_sig_source_x_0 = analog.sig_source_c(samp_rate, analog.GR_COS_WAVE, (frequency + (0 * offset)), 1, 0, 0)
+        self.analog_sig_source_x_0 = analog.sig_source_c(samp_rate, analog.GR_COS_WAVE, (frequency + (0 * offset/2)), 1, 0, 0)
         self.analog_random_source_x_0_0_1 = blocks.vector_source_i(list(map(int, numpy.random.randint(0, 8, 1000))), True)
         self.analog_random_source_x_0_0_0 = blocks.vector_source_i(list(map(int, numpy.random.randint(0, 8, 1000))), True)
         self.analog_random_source_x_0_0 = blocks.vector_source_i(list(map(int, numpy.random.randint(0, 8, 1000))), True)
@@ -400,7 +400,7 @@ class test2e(gr.top_block, Qt.QWidget):
 
     def set_offset(self, offset):
         self.offset = offset
-        self.analog_sig_source_x_0.set_frequency((self.frequency + (0 * self.offset)))
+        self.analog_sig_source_x_0.set_frequency((self.frequency + (0 * self.offset/2)))
         self.analog_sig_source_x_0_0.set_frequency((self.frequency + (1 * self.offset)))
         self.analog_sig_source_x_0_1.set_frequency((self.frequency + (2 * self.offset)))
         self.analog_sig_source_x_0_2.set_frequency((self.frequency + (3 * self.offset)))
@@ -408,7 +408,6 @@ class test2e(gr.top_block, Qt.QWidget):
         self.analog_sig_source_x_0_2_0_0.set_frequency((self.frequency + (5 * self.offset)))
         self.analog_sig_source_x_0_2_0_0_0.set_frequency((self.frequency + (6 * self.offset)))
         self.analog_sig_source_x_0_2_0_0_0_0.set_frequency((self.frequency + (7 * self.offset)))
-        self.qtgui_freq_sink_x_0.set_frequency_range((self.frequency+(self.offset*4)), 50000000)
 
     def get_gain(self):
         return self.gain
@@ -421,7 +420,7 @@ class test2e(gr.top_block, Qt.QWidget):
 
     def set_frequency(self, frequency):
         self.frequency = frequency
-        self.analog_sig_source_x_0.set_frequency((self.frequency + (0 * self.offset)))
+        self.analog_sig_source_x_0.set_frequency((self.frequency + (0 * self.offset/2)))
         self.analog_sig_source_x_0_0.set_frequency((self.frequency + (1 * self.offset)))
         self.analog_sig_source_x_0_1.set_frequency((self.frequency + (2 * self.offset)))
         self.analog_sig_source_x_0_2.set_frequency((self.frequency + (3 * self.offset)))
@@ -429,7 +428,6 @@ class test2e(gr.top_block, Qt.QWidget):
         self.analog_sig_source_x_0_2_0_0.set_frequency((self.frequency + (5 * self.offset)))
         self.analog_sig_source_x_0_2_0_0_0.set_frequency((self.frequency + (6 * self.offset)))
         self.analog_sig_source_x_0_2_0_0_0_0.set_frequency((self.frequency + (7 * self.offset)))
-        self.qtgui_freq_sink_x_0.set_frequency_range((self.frequency+(self.offset*4)), 50000000)
 
 
 

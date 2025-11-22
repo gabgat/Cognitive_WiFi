@@ -37,7 +37,7 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: '2412000000'
+    value: '2429500000'
   states:
     bus_sink: false
     bus_source: false
@@ -81,6 +81,23 @@ blocks:
     coordinate: [200, 12]
     rotation: 0
     state: enabled
+- name: blocks_freqshift_cc_0
+  id: blocks_freqshift_cc
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    freq: '0.0'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    sample_rate: samp_rate
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [440, 264.0]
+    rotation: 0
+    state: enabled
 - name: blocks_tag_debug_0
   id: blocks_tag_debug
   parameters:
@@ -97,7 +114,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [768, 380.0]
+    coordinate: [1216, 380.0]
     rotation: 0
     state: enabled
 - name: blocks_uchar_to_float_0
@@ -112,7 +129,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [768, 336.0]
+    coordinate: [1216, 336.0]
     rotation: 0
     state: enabled
 - name: digital_ofdm_rx_0
@@ -139,7 +156,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [448, 280.0]
+    coordinate: [888, 280.0]
     rotation: 0
     state: enabled
 - name: qtgui_time_sink_x_0
@@ -236,7 +253,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [952, 308.0]
+    coordinate: [1400, 308.0]
     rotation: 0
     state: enabled
 - name: uhd_usrp_source_0
@@ -276,7 +293,7 @@ blocks:
     ant7: '"RX2"'
     ant8: '"RX2"'
     ant9: '"RX2"'
-    bw0: '0'
+    bw0: '45000000'
     bw1: '0'
     bw10: '0'
     bw11: '0'
